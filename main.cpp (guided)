@@ -1,0 +1,39 @@
+#include <iostream> // menyertakan library untuk input dan output
+#include "queue.h" // menyertakan file header queue kita
+#include "queue.cpp"
+
+using namespace std;
+
+int main()
+{
+    queue Q; // deklarasi variabel Q bertipe queue
+
+    createQueue(Q); // inisialisasi
+    printInfo(Q); // tampilkan isi queue
+
+    cout << "\n Enqueue 3 eleman" << endl;
+    enqueue(Q, 5);
+    printInfo(Q);
+    enqueue(Q, 2);
+    printInfo(Q);
+    enqueue(Q, 7);
+    printInfo(Q);
+
+    cout << "\n Dequeue 1 eleman" << endl;
+    // hapus 1 elemen dan tampilkan nilainya
+    cout << "Elemen keluar: " << dequeue(Q) << endl;
+    printInfo(Q); // tampilkan isi queue setelah dequeue
+
+    cout << "\n Enqueue 1 eleman" << endl;
+    enqueue(Q, 4);
+    printInfo(Q);
+
+    cout << "\n Dequeue 2 eleman" << endl;
+    // hapus 2 elemen dan tampilkan nilainya
+    cout << "Elemen keluar: " << dequeue(Q) << endl;
+    // hapus 2 elemen lagi dan tampilkan isi queue setelah dequeue
+    cout << "Elemen keluar: " << dequeue(Q) << endl;
+    printInfo(Q); // tampilkan isi queue
+
+    return 0; 
+} 
